@@ -1,1 +1,75 @@
+#include <stdio.h>
+float soma (float x, float y){
+    float resultado =  x + y;
+    return resultado;
+}
+
+float subtracao(float x, float y){
+    float resultado = x - y;
+    return resultado;
+}
+
+float multiplicacao(float x, float y){
+    float resultado = x * y;
+    return resultado;
+}
+
+float divisao(float x, float y){
+    float resultado = x / y ;
+    return resultado;
+}
+
+int main()
+{
+    float x = 0;
+    float y = 0;
+    float a = 0;
+    int selecionado = 0;
+    while(selecionado < 5)
+    {
+        printf("Menu:\n 1-Soma\n 2-Subtração\n 3-Multiplicação\n 4-Divisão\n 5-Sair\n");
+        printf("Qual Operação Você Deseja Realizar:");
+        scanf("%d",&selecionado);
+        
+        if(selecionado < 5){
+            printf("\nPrimeiro Valor da Operação:");
+            scanf("%f",&x);
+        
+            printf("\nSegundo Valor da Operação:");
+            scanf("%f",&y);
+        }
+        else{
+            printf("\nSaindo ...\n");
+            break;
+        }
+        switch(selecionado){
+            case 1:
+                printf("\nSomar!\n");
+                a = soma(x,y);
+                printf("O resultado é:%.2f \n",a);
+                break;
+            case 2:
+                printf("\nSubtração!\n"); 
+                a = subtracao(x, y);
+                printf("O resultado é:%.2f \n",a);
+                break;
+            case 3:
+                printf("\nMultiplicação!\n"); 
+                a = multiplicacao(x, y);
+                printf("O resultado é:%.2f \n",a);
+                break;
+            case 4:
+                printf("\nDivisão!\n"); 
+                a = divisao(x, y);
+                printf("O resultado é:%.2f \n",a);
+                break;
+        }
+    }
+    
+    
+    
+    
+    
+    return 0;
+}
 
