@@ -1,0 +1,71 @@
+#include <stdio.h>
+
+void buscarNum();
+int numPar();
+
+
+int main()
+{
+   
+    int vetor[10] = {10,25,53,95,32,85,99,35,65,12};
+    int i = 0;
+    int num = 0;
+    
+    int par = 0;
+    int a = 0;
+    
+    float media = 0;
+    float soma = 0;
+    int b = 0;
+    
+    printf("Digite um valor para ser identificado no vetor:");
+    scanf("%i",&num);
+    
+    buscarNum(i, num, vetor);
+        
+    par = numPar(par, a , vetor);
+    printf("\nA quantidade de números pares no vetor é de: %i",par);
+    
+    
+    
+    for(b = 0; b < 10; b++){
+        soma += vetor[b];
+    }
+    media = soma / b;
+    printf("\nMedia dos valores: %.2f",media);
+    
+    
+      
+    return 0;
+}
+
+void buscarNum(int i, int num, int vetor[]){
+     while(i < 10){
+        if(num == vetor[i]){
+            printf("\nO número escolhido esta na posição %i do vetor\n", i + 1);
+            break;
+        }
+        else{
+            if( i == 9){
+                 printf("O número escolhido não existe.\n");
+                break;
+            }
+            else{
+                i++;
+            }
+        }
+    }
+}
+
+int numPar(int par, int a, int vetor[]){
+   while(a < 10){
+        if (vetor[a]%2 == 0){
+            par = par + 1;
+            a++;
+        }
+        else{
+            a++;
+        }
+    } 
+    return par;
+}
