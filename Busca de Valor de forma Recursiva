@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int findValue(int *vet, int buscado, int tamVet) {
+  // cria uma função para buscar um valor de forma recursiva, passando como
+  // parametros o item duscado, o vetor e o tamanho dele.
+  if (tamVet >=
+      0) { // irá ler a função passando por todos os elementos do vetor
+    if (buscado == vet[tamVet]) {
+      printf(
+          "O elemento está na lista"); // verifica se o número buscado está no
+                                       // indice e mostra que ele está na lista.
+      return buscado;
+    } else { // caso o número buscado não esteja no primeiro indice do vetor, o
+             // codigo irá passar por todo o vetor em busca do número.
+      tamVet = tamVet - 1;
+      findValue(vet, buscado, tamVet);
+    }
+  } else {
+    // caso o número buscado não esteja na lista a função é encerrada
+    printf("O elemento não está na lista.");
+    return -1;
+  }
+}
+
+int main(void) {
+  int vet[10] = {3, 5, 9, 85, 63, 58, 74, 82, 10, 3432}; // criação do vetor
+  int x = 0;
+  for (int i = 0; i < 10; i++) { // mostra o vetor na tela
+    printf("[%i]", vet[i]);
+  }
+
+  printf("\nEscolha um número que deseja achar no vetor."); // escolhe o número
+                                                            // a ser buscado
+  scanf("%i", &x);
+
+  findValue(vet, x, 10);
+
+  return 0;
+}
