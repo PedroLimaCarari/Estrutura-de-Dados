@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int buscaSO(int valorBuscado, int TAM, int *lista) {
+  int i;
+  for (i = 0; i < TAM; i++) {
+    if (valorBuscado == lista[i]) {
+      printf("\nO valor buscado se encontra na posição %i", i + 1);
+      return i;
+    } else if (valorBuscado < lista[i]) {
+      printf("\nO valor buscado não se encontra na lista");
+      break;
+    }
+  }
+  return -1;
+}
+
+int main(void) {
+
+  int valorBuscado = 0, TAM = 7, lista[7] = {-8, 4, 21, 23, 54, 67, 90};
+
+  for (int i = 0; i < 7; i++) {
+    printf("[%i]", lista[i]);
+  }
+
+  printf("\nEscolha um valor q deseja encontrar:");
+  scanf("%i", &valorBuscado);
+
+  buscaSO(valorBuscado, TAM, lista);
+
+  return 0;
+}
